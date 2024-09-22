@@ -3,7 +3,16 @@
         "--query-driver=/usr/bin/arm-none-eabi*"
     ],
     "cSpell.words": [
+        "BSRR",
         "GPIO",
+        "GPIOA",
+        "GPIOB",
+        "GPIOC",
+        "GPIOD",
+        "GPIOE",
+        "GPIOF",
+        "GPIOG",
+        "GPIOH",
         "huart"
     ]
 }

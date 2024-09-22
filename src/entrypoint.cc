@@ -11,7 +11,7 @@ void entrypoint() {
     gpio::PH<12> red {};
 
     while (true) {
-        time::delay(500);
+        time::delay(1000);
         gpio::toggle(green, blue, red);
     }
 }

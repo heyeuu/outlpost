@@ -7,12 +7,11 @@ set(CMAKE_C_EXTENSIONS ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 20)
 
-# Define the build type
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE "Debug")
-endif()
+add_compile_options(-Os -O3)
+set(CMAKE_BUILD_TYPE "Debug")
+
 # Set the project name
-set(CMAKE_PROJECT_NAME oled)
+set(CMAKE_PROJECT_NAME template)
 
 # Include toolchain file
 include("hal/cmake/gcc-arm-none-eabi.cmake")
@@ -38,14 +37,12 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined library search paths
 )
 
-aux_source_directory(src/oled oled)
-aux_source_directory(src src)
+file(GLOB_RECURSE PROJECT_CPP "src/*.cc")
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-    ${oled}
-    ${src}
+    ${PROJECT_CPP}
 )
 
 # Add include paths
