@@ -38,11 +38,13 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 )
 
 file(GLOB_RECURSE PROJECT_CPP "src/*.cc")
+file(GLOB_RECURSE PROJECT_C "src/*.c")
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
     ${PROJECT_CPP}
+    ${PROJECT_C}
 )
 
 # Add include paths
