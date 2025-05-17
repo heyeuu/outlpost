@@ -20,7 +20,8 @@ float speed_current = 0.0;
 int current_button_state = 1;
 
 
-pid_controller pid_ctl_6020(2500,2.0,1);
+
+pid_controller pid_ctl_6020(1800.0,2.2,0.8);
 
 float speed_output_6020=0.0;
 
